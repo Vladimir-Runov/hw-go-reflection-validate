@@ -5,6 +5,16 @@
  
 ##Задание
 Напишите функцию Validate(v interface{}) error, которая проверяет структуру на соответствие правилам, заданным через теги. Например:
+---
+· инициализировать модуль: go mod init validate
+· установить зависимости: go mod tidy
+· запустить: go run main.go
+
+результат тестирования
+![результат выполнения](https://github.com/Vladimir-Runov/hw-go-reflection-validate/blob/main/validate/img/main.png?raw=true)
+
+
+
 
  ```Go
 type User struct {
@@ -12,16 +22,6 @@ type User struct {
     Age   int    `validate:"min=18;max=65"`
     Email string `validate:"regexp=^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"`
 }
-
-
-
----
-· инициализировать модуль: go mod init validate
-· установить зависимости: go mod tidy
-· запустить: go run main.go
-
-результат тестирования
-![результат выполнения](validate/img/main.png)
 
 
 
