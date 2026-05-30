@@ -95,17 +95,33 @@ func applyRuleToValofFiled(field reflect.Value, rule string, fieldName string) e
 }
 
 func main() {
-	usersw := []User{User{Name: "Jo", Age: 17, Email: "valid@email.su"},
-		User{Name: "John A", Age: 97, Email: "valid@email.it"},
-		User{Name: "John A", Age: 27, Email: "invalid-email"},
-		User{Name: "John A", Age: 17, Email: "a.valid@email.com"},
-		User{Name: "Jo Ok", Age: 52, Email: "a.valid@email.su"}}
-
-	for i, user := range usersw {
-		if err := Validate(user); err != nil {
-			fmt.Printf("user #%d Validation error:    %s : %v\n", i+1, err, user)
-		} else {
-			fmt.Printf("user #%d Validation Ok!\n", i+1)
-		}
+	if err := Validate(User{Name: "Ив", Age: 18, Email: "test@example.com"}); err != nil {
+		fmt.Println("Validation error:", err)
 	}
+
+	if err := Validate(User{Name: "Иван", Age: 70, Email: "test@example.com"}); err != nil {
+		fmt.Println("Validation error:", err)
+	}
+
+	if err := Validate(User{Name: "Иван", Age: 35, Email: "invalid email"}); err != nil {
+		fmt.Println("Validation error:", err)
+	}
+
+	if err := Validate(User{Name: "Иван", Age: 35, Email: "test@example.com"}); err != nil {
+		fmt.Println("Validation error:", err)
+	}
+
+	//	usersw := []User{User{Name: "Jo", Age: 17, Email: "valid@email.su"},
+	//		User{Name: "John A", Age: 97, Email: "valid@email.it"},
+	//		User{Name: "John A", Age: 27, Email: "invalid-email"},
+	//		User{Name: "John A", Age: 17, Email: "a.valid@email.com"},
+	//		User{Name: "Jo Ok", Age: 52, Email: "a.valid@email.su"}}
+	//
+	//	for i, user := range usersw {
+	//		if err := Validate(user); err != nil {
+	//			fmt.Printf("user #%d Validation error:    %s : %v\n", i+1, err, user)
+	//		} else {
+	//			fmt.Printf("user #%d Validation Ok!\n", i+1)
+	//		}
+	//	}
 }
