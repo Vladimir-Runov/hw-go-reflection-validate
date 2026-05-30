@@ -20,7 +20,7 @@ type User struct {
 · установить зависимости: go mod tidy
 · запустить: go run main.go
 
-![ссылка на задание](https://github.com/Vladimir-Runov/hw-go-reflection-validate/blob/main/validate/img/main.png)
+![код](https://github.com/Vladimir-Runov/hw-go-reflection-validate/blob/main/validate/img/main.png)
 
 результат тестирования
 
