@@ -16,7 +16,6 @@ type User struct {
 }
 
 func Validate(v interface{}) error {
-
 	valu := reflect.ValueOf(v) //предоставляет доступ к значению и операциям с ним
 	if valu.Kind() != reflect.Struct {
 		return errors.New("ожидается валидация структуры, с 'validate' тегами в полях")
@@ -93,7 +92,6 @@ func applyRuleToValofFiled(field reflect.Value, rule string, fieldName string) e
 	}
 
 	return nil
-
 }
 
 func main() {
