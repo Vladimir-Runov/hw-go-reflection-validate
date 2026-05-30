@@ -14,3 +14,7 @@ type User struct {
 }
 
 ---
+· инициализировать модуль: go mod init validate
+· установить зависимости: go mod tidy
+· запустить: go run main.go
+
